@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    <div id="userDetails"></div>
+    
+</body>
+<script>
+// app.js
+
+// Function to make the GET request and display the user details
+function getUserDetails() {
+  const apiEndpoint = 'https://crudcrud.com/api/YOUR_API_ENDPOINT'; // Replace with your actual API endpoint
+
+  axios.get(apiEndpoint)
+    .then(response => {
+      const userDetailsContainer = document.getElementById('userDetails');
+      let userDetailsHTML = '<ul>';
+
+      response.data.forEach(user => {
+        userDetailsHTML += `<li>Name: ${user.name}, Age: ${user.age}, Email: ${user.email}</li>`;
+      });
+
+      userDetailsHTML += '</ul>';
+      userDetailsContainer.innerHTML = userDetailsHTML;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+// Event listener to trigger the function when the DOM has loaded
+document.addEventListener('DOMContentLoaded', () => {
+  getUserDetails();
+});
+
+</script>
+</html>
