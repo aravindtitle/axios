@@ -1,0 +1,17 @@
+npm install axios
+const axios = require('axios');
+const dataObject = {
+  name: 'John Doe',
+  age: 30,
+  email: 'johndoe@example.com'
+};
+const apiEndpoint = 'https://crudcrud.com/api/YOUR_API_ENDPOINT';
+
+axios.post(apiEndpoint, dataObject)
+  .then(response => {
+    console.log('POST request successful!');
+    console.log('Response:', response.data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
