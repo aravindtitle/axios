@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Details</title>
+  <!-- Add your CSS styles here -->
+</head>
+<body>
+  <h1>User Details</h1>
+  <div id="user-list">
+    <!-- User details will be dynamically added here -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
